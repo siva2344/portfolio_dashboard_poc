@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-grid-list cols="2"  rowHeight="1:0.5" gutterSize="20px">
+    <mat-grid-tile>
+      <canvas baseChart
+        [datasets]="lineChartData"
+        [labels]="lineChartLabels"
+        chartType="line">
+      </canvas>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div>
+      <p>Portfolio Summary</p>
+      <p>Total Value: {{ portfolioData.totalValue }}</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <h3>Asset Allocation</h3>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <canvas baseChart
+          [datasets]="pieChartDatasets"
+          [labels]="pieChartLabels"
+          [legend]="pieChartLegend"
+          [type]="'pie'">
+        </canvas>
+    </mat-grid-tile>
+   
+  </mat-grid-list>
+</mat-card>
